@@ -1,0 +1,40 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.billg118/mcp-server-azure-devops",
+  "title": "Azure DevOps",
+  "description": "Azure DevOps MCP server: projects, repos, work items, pull requests, pipelines, and wikis.",
+  "repository": {
+    "url": "https://github.com/billg118/mcp-server-azure-devops",
+    "source": "github"
+  },
+  "version": "0.1.54",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@billg118/mcp-server-azure-devops",
+      "version": "0.1.54",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        {
+          "name": "AZURE_DEVOPS_ORG_URL",
+          "description": "Azure DevOps organization URL, e.g. https://dev.azure.com/your-organization",
+          "isRequired": true
+        },
+        {
+          "name": "AZURE_DEVOPS_AUTH_METHOD",
+          "description": "Authentication method: 'pat', 'azure-identity' (default), or 'azure-cli'",
+          "default": "azure-identity"
+        },
+        {
+          "name": "AZURE_DEVOPS_PAT",
+          "description": "Personal Access Token (required when AZURE_DEVOPS_AUTH_METHOD is 'pat')",
+          "isSecret": true
+        },
+        {
+          "name": "AZURE_DEVOPS_DEFAULT_PROJECT",
+          "description": "Default project to use when none is specified"
+        }
+      ]
+    }
+  ]
+}
